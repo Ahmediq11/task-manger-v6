@@ -1,8 +1,7 @@
 // frontend/js/login.js
 
 // API base URL - this points to your backend API
-const API_BASE_URL = window.location.origin + '/api';
-
+const API_BASE_URL = "/api";
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
