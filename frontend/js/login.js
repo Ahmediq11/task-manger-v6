@@ -23,7 +23,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             localStorage.setItem('token', data.token);
             localStorage.setItem('username', username);
             // Update the redirect path
-            window.location.href = '/public/dashboard.html';
+            window.location.href = '\public\dashboard.html';
         } else {
             alert('Login failed');
         }
