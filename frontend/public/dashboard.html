@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net/; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net/ https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="frontend\css\style.css" />
+    <link rel="stylesheet" href="frontend\css\styles.css" />
+    <link rel="stylesheet" href="frontend\css\modern-styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <span class="navbar-brand fade-in">Task Manager</span>
+        <div class="d-flex align-items-center">
+          <span class="navbar-text me-3 slide-in"
+            >Welcome, <span id="username" class="fw-bold"></span
+          ></span>
+          <button onclick="logout()" class="btn btn-outline-light slide-in">
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card fade-in">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0 color">My Tasks</h5>
+              <span id="taskCount" class="badge bg-primary">0/10</span>
+            </div>
+            <div class="card-body">
+              <form id="taskForm" class="mb-4">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="taskInput"
+                    class="form-control"
+                    placeholder="Enter New Task"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary">
+                    Add Task
+                  </button>
+                </div>
+              </form>
+              <div id="feedback" class="alert d-none"></div>
+
+              <!-- Active Tasks Section -->
+              <div class="task-section mb-4">
+                <h6 class="mb-3 text-secondary">Active Tasks</h6>
+                <ul id="activeTaskList" class="list-group"></ul>
+              </div>
+
+              <!-- Completed Tasks Section -->
+              <div class="task-section">
+                <h6 class="mb-3 text-secondary">Completed Tasks</h6>
+                <ul id="completedTaskList" class="list-group"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
