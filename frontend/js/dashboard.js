@@ -1,6 +1,5 @@
 // Update API endpoints
-const API_BASE_URL = window.location.origin + "/api";
-
+const API_BASE_URL = window.location.origin + '/api';
 // Update fetch calls
 async function loadTasks() {
   try {
