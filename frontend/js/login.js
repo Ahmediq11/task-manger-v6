@@ -1,7 +1,5 @@
-// frontend/js/login.js
-
-// API base URL - this points to your backend API
 const API_BASE_URL = "/api";
+
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -14,6 +12,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: 'include',
       body: JSON.stringify({ username, password }),
     });
 
@@ -24,10 +23,16 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
       localStorage.setItem("username", username);
       window.location.href = "/dashboard.html";
     } else {
-      alert(data.message || "Login failed");
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'alert alert-danger';
+      errorDiv.textContent = data.message || "Login failed";
+      document.getElementById("loginForm").prepend(errorDiv);
     }
   } catch (error) {
     console.error("Error:", error);
-    alert("An error occurred during login");
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'alert alert-danger';
+    errorDiv.textContent = "An error occurred during login";
+    document.getElementById("loginForm").prepend(errorDiv);
   }
 });
