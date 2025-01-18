@@ -1,7 +1,6 @@
 // frontend/js/register.js
 
-const API_BASE_URL = window.location.origin + '/api';
-
+const API_BASE_URL = "/api";
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
