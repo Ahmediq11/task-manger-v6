@@ -1,6 +1,5 @@
 // Update API endpoint
-const API_BASE_URL = window.location.origin + "/api";
-
+const API_BASE_URL = window.location.origin + '/api';
 document
   .getElementById("registerForm")
   .addEventListener("submit", async (e) => {
