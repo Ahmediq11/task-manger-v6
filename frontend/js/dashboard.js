@@ -1,7 +1,6 @@
 // frontend/js/dashboard.js
 
-const API_BASE_URL = window.location.origin + '/api';
-
+const API_BASE_URL = "/api";
 // Check if user is logged in
 const token = localStorage.getItem('token');
 if (!token) {
